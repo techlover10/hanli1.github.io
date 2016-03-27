@@ -1,0 +1,75 @@
+
+<div class="row">
+	<div class="col s12 m6">
+		<div class="cl s12 m6">
+			<div class="card medium">
+				<div class="card-image">
+					<img id="cornell" src="img/cornell.jpg" onload="showImage(this);" style="visibility:hidden">
+					<span class="card-title"></span>
+				</div>
+				<div class="card-content">
+					<p>Class of 2018, Bachelor of Science</p>
+					<p>I'm currently a sophomore at <a class="school-link" href="https://www.cornell.edu/" target="_blank">Cornell University</a> studying Electrical and Computer Engineering
+						with a double major in Computer Science.</p>
+					</div>
+				</div>
+			</div>
+			<div class="card medium">
+				<div class="card-image">
+					<img id="west" src="img/planowest.jpg" onload="showImage(this);" style="visibility:hidden">
+					<span class="card-title"></span>
+				</div>
+				<div class="card-content">
+					<p>Class of 2014, High School Diploma</p>
+					<p>Previously I studied at <a class="school-link" href="http://k-12.pisd.edu/schools/pwsh/" target="_blank">Plano West Senior High School</a> in Plano, TX.</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col s12 m6">
+			<div class="card">
+				<div class="card-content">
+					<span class="card-title black-text">Relevant Coursework (CS)</span>
+					<ul>
+						<li>CS 2112 - Honors Object Oriented Programming</li>
+						<li>CS 2043 - Unix Scripting and Tools</li>
+						<li>CS 2800 - Discrete Structures</li>
+						<li>CS 4820 - Introduction to Algorithms</li>
+					</ul>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-content">
+					<span class="card-title black-text">Relevant Coursework (ECE)</span>
+					<ul>
+						<li>ECE 1820 - Introduction to Nanofabrication</li>
+						<li>ECE 2100 - Introduction to Circuits</li>
+						<li>ECE 2200 - Signals and Systems</li>
+						<li>ECE 2300 - Digital Logic and Computer Organization (TA)</li>
+						<li>ECE 3100 - Probability and Statistics</li>
+						<li>ECE 3140 - Embedded Systems</li>
+						<li>ECE 3150 - Introduction to Microelectronics</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col s12 m6">
+		
+	</div>
+</div>
+<script>
+function showImage(img)
+{
+	$("#" + img.id).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
+}
+</script>
+<style>
+.school-link {
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+}
+</style>
