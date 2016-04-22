@@ -1,0 +1,50 @@
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="favicon.ico">
+
+<title>Han Li</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link href="css/creature.css" rel="stylesheet">
+<link href="materialize/css/creature.css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Raleway:700,400' rel='stylesheet' type='text/css'>
+<link href="css/home.css" rel="stylesheet">
+
+<body>
+	<main class="light-blue accent-3">
+		<div class="container center white-text" style="margin-top:50px;">
+			<div class="bubble center" style="border-color: rgb(127, 127, 127); background-color: rgb(255, 255, 255); margin-bottom:40px;">
+				<p class="black-text" style="font-size:67px;">404</p>
+				<div class="pointer" style="content: ''; position: absolute; border-style: solid; border-width: 15px 15px 0px; display: block; width: 0px; z-index: 1; bottom: -10px; left: 110px; border-color: rgb(255, 255, 255) transparent;">
+				</div>
+				<div class="pointerBorder" style="display: none; border-color: rgb(127, 127, 127) transparent;">
+				</div>
+			</div>
+			<li style="list-style-type: none;">
+				<div class="click-anim">
+					<figure class="hungry center" style="background-color:#E12828">
+						<div class="eye"></div>
+						<div class="eye"></div>
+						<div class="mouth"></div>
+					</figure>
+				</div>
+				<div class="shadow"></div>
+			</li>
+			<h5 style="margin: 50px;">Just a giant red circle. Nothing to see here, move along now.</h5>
+			<button class="btn-large waves-effect white black-text" type="submit" name="action"id="gohome">Go home</button>
+		</div>	
+	</main>
+</body>
+<script>
+$("#gohome").click(function(){
+	location.href="index.html";
+});
+</script>
+</html>

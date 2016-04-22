@@ -1,0 +1,180 @@
+<!-- <a name="aboutme" class="anchor"></a>
+      <div id="aboutme-anchor" class="row">
+        <div class="col s10 offset-s1">
+          <div class="card-panel">
+            <div class="row center-align" style="margin-top:0px; margin-bottom:0px;">
+              <div>
+                <img style="height:200px; width:200px;" class="circle center z-depth-2" src="img/profile.jpg">
+                <h3>Student - Software Developer</h3>
+                <p>Android and Backend Development</p>
+              </div>
+              <div class="col s8 offset-s2">
+                <p>Hi there! I'm Han and currently a student at Cornell University. 
+                  I am intimately familiar with frontend <b>Android</b> development in <b>Java</b> and the major frameworks used for Material Design. Some of my other expertise include backend server and database development using <b>MySQL</b> and <b>PHP</b>. 
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+      function showImage(img)
+      {
+        $("#" + img.id).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
+      }
+      </script>
+
+      <a name="education" class="anchor scrollspy"></a>
+      <div id="education-anchor" class="row">
+        <div class="col s12 m6">
+          <div class="card medium">
+            <div class="card-image">
+              <img id="cornell" src="img/cornell.jpg" onload="showImage(this);" style="visibility:hidden">
+              <span class="card-title"></span>
+            </div>
+            <div class="card-content">
+              <p>Class of 2018, Bachelor of Science</p>
+              <p>I'm currently a sophomore at <a class="school-link" href="https://www.cornell.edu/" target="_blank">Cornell University</a> studying Electrical and Computer Engineering
+                with a minor in Computer Science.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6">
+            <div class="card">
+              <div class="card-content">
+                <span class="card-title black-text">Relevant Coursework (CS)</span>
+                <li>CS 2112 - Honors Object Oriented Programming</li>
+                <li>CS 2800 - Discrete Structures</li>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-content">
+                <span class="card-title black-text">Relevant Coursework (ECE)</span>
+                <li>ECE 1820 - Introduction to Nanofabrication</li>
+                <li>ECE 2100 - Introduction to Circuits</li>
+                <li>ECE 2200 - Signals and Systems</li>
+                <li>ECE 2300 - Computer Organization</li>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card medium">
+            <div class="card-image">
+              <img id="west" src="img/planowest.jpg" onload="showImage(this);" style="visibility:hidden">
+              <span class="card-title"></span>
+            </div>
+            <div class="card-content">
+              <p>Class of 2014, High School Diploma</p>
+              <p>Previously I studied at <a class="school-link" href="http://k-12.pisd.edu/schools/pwsh/" target="_blank">Plano West Senior High School</a> in Plano, TX.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <style>
+      .school-link {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      </style>
+
+      <a name="experience" class="anchor"></a>
+      <div id="experience-anchor" class="row">
+        <div class="col s12 m8">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title black-text">P1 Analytics</span>
+              <p>Software Developer Intern</p>
+              <p style="text-align:left;">
+                June 2015 - August 2015
+                <span style="float:right;">Miami, Florida</span>
+              </p>
+              <br>
+              <li>Developed frontend Android application Stocli by integrating with backend using HTTP requests while focusing on Material Design</li>
+              <li>Deployed MySQL database and wrote PHP scripts in the backend for custom features including user lists.</li>
+              <li>Frontend web design for OutResearch website using HTML5, Javascript, and CSS. </li>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title black-text">Intel-Cornell Cup</span>
+              <p>Computer Science Team Member</p>
+              <p style="text-align:left;">
+                September 2014 - Present
+                <span style="float:right;">Ithaca, New York</span>
+              </p>
+              <br>
+              <li>Developed rollercoaster simulation using C# in Unity3D.</li>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title black-text">Languages</span>
+              <br>
+              <li>Java</li>
+              <li>C#</li>
+              <li>Python</li>
+              <li>XML</li>
+              <li>JSON</li>
+              <br>
+              <p>Familiar with</p>
+              <li>MySQL</li>
+              <li>PHP</li>
+              <li>C</li>
+              <li>Arduino</li>
+              <li>HTML</li>
+              <li>Javascript</li>
+              <li>CSS</li>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a name="contactme" class="anchor"></a>
+      <div id="contactme-anchor" class="row">
+        <div class="col s12">
+          <div class="card-panel" style="height: 400px;">
+            <p>Feel free to send me an email!</p>
+            <form>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="subject" type="text" class="validate"></input>
+                  <label for="subject">Subject</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="message" type="text" class="validate"></input>
+                  <label for="message">Message</label>
+                </div>
+              </div>
+            </form>
+            <button class="btn-large waves-effect waves-light pull right green darken-1" type="submit" name="action"
+            id="send">
+            Send
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+    $('#send').click(function(){
+      launchEmail();
+    });
+    function launchEmail()
+    {
+      var url = "mailto:dragon1357531@gmail.com?subject=";
+      url+= $("#subject").val().replace(" ", "+");
+      url+= "&body="
+      url+= $("#message").val().replace(" ", "+");
+      window.open(
+        url,
+  '_blank' // <- This is what makes it open in a new window.
+  );
+    }
+    </script>
+  </div> -->
