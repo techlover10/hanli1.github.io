@@ -92,6 +92,7 @@ $('#contact_me_tab').click(function(){
 
     $('#'+ $(this).clone().removeClass("active").attr('class')).click();
     e.preventDefault();
+    $('.button-collapse').sideNav('hide');
   });
 /*generates the sidebar based on the elements in the top tabs
   removes the wave effect as sidebar has it built in
