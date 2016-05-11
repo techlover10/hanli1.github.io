@@ -10,11 +10,11 @@ a.anchor{
 	visibility: hidden;
 }
 html { 
-    /*background: url("http://hdwallpapers360.com/wp-content/uploads/photodune-3166398-blurred-night-city-lights-m.jpg") no-repeat center center fixed; 
+    background: url("https://static.pexels.com/photos/9574/pexels-photo.jpeg") no-repeat center center fixed; 
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
-    -o-background-size: cover;*/
+    -o-background-size: cover;
     overflow-y:scroll;
 }
 nav{
@@ -61,13 +61,7 @@ ul li{
 }
 
 .my-logo{
-	color: #e0dfdc;
-    letter-spacing: .1em;
-    text-shadow: 
-      0 -1px 0 #fff, 
-      0 1px 0 #2e2e2e, 
-      0 2px 0 #2c2c2c, 
-      0 3px 0 #2a2a2a;
+
 }
 /* Wrapper */
 .icon-button {
