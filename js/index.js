@@ -1,7 +1,8 @@
 $( document ).ready(function() {
   $(".button-collapse").sideNav();
   loadSideBarDynamically();
-  loadAboutMe();
+  //$('#about_me_tab')[0].click();
+  $('#projects_tab')[0].click();
 });
 // $('#aboutme-anchor').scrollfire({
 //     // Offsets
@@ -70,76 +71,66 @@ $( document ).ready(function() {
 //       removeActives(); loadContactMe();
 //     }
 // });
+
 //On click listeners for tabs
 $('#about_me_tab').click(function(){
-  loadAboutMe();
+  removeActives();
+  $('.about_me_tab').addClass("active");
+  $('#main_container').load('about.html');
+  window.scrollTo(0, 0);
 });
 $('#education_tab').click(function(){
-  loadEducation();
+  removeActives();
+  $('.education_tab').addClass("active");
+  $('#main_container').load('education.html');
+  window.scrollTo(0, 0);
 });
 $('#experience_tab').click(function(){
-  loadExperience();
+  removeActives();
+  $('.experience_tab').addClass("active");
+  $('#main_container').load('experience.html');
+  window.scrollTo(0, 0);
 });
 $('#contact_me_tab').click(function(){
-  loadContactMe();
+  removeActives();
+  $('.contact_me_tab').addClass("active");
+  $('#main_container').load('contact.html');
+  window.scrollTo(0, 0);
 });
+$('#projects_tab').click(function(){
+  removeActives();
+  $('.projects_tab').addClass("active");
+  $('#main_container').load('projects.html');
+  window.scrollTo(0, 0);
+})
 
 /*
   Handle sidebar clicks, instead of individual ones, it simply gets the id of the tab button
   from the sidebar item class, then sends a click to the button
   */
-  $('#sidebar').on('click','li',function(e){
-
-    $('#'+ $(this).clone().removeClass("active").attr('class')).click();
-    e.preventDefault();
-    $('.button-collapse').sideNav('hide');
-  });
+$('#sidebar').on('click','li',function(e){
+  $('#'+ $(this).clone().removeClass("active").attr('class')).click();
+  e.preventDefault();
+  $('.button-collapse').sideNav('hide');
+});
 /*generates the sidebar based on the elements in the top tabs
-  removes the wave effect as sidebar has it built in
-  adds a class with the id in order to keep highlighting consistant
-  */
-  function loadSideBarDynamically()
-  {
-    $('#tabs').children('li').each(function () {
-      $('#sidebar').append($(this).clone().removeClass("waves-effect").addClass($(this).attr('id')));
-    });
-  }
+removes the wave effect as sidebar has it built in
+adds a class with the id in order to keep highlighting consistant
+*/
+function loadSideBarDynamically()
+{
+  $('#tabs').children('li').each(function () {
+    $('#sidebar').append($(this).clone().removeClass("waves-effect").addClass($(this).attr('id')));
+  });
+}
 
-  function removeActives()
-  {
-    $('#tabs').children('li').each(function () {
-      $(this).removeClass("active");
-    });
-    $('#sidebar').children('li').each(function () {
-      $(this).removeClass("active");
-    });
-  // $("#main_container").css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
-}
-function loadAboutMe()
+function removeActives()
 {
-  removeActives();
-  $('.about_me_tab').addClass("active");
-  $('#main_container').load('about.html');
-  window.scrollTo(0, 0);
-}
-function loadEducation()
-{
-  removeActives();
-  $('.education_tab').addClass("active");
-  $('#main_container').load('education.html');
-  window.scrollTo(0, 0);
-}
-function loadExperience()
-{
-  removeActives();
-  $('.experience_tab').addClass("active");
-  $('#main_container').load('experience.html');
-  window.scrollTo(0, 0);
-}
-function loadContactMe()
-{
-  removeActives();
-  $('.contact_me_tab').addClass("active");
-  $('#main_container').load('contact.html');
-  window.scrollTo(0, 0);
+  $('#tabs').children('li').each(function () {
+    $(this).removeClass("active");
+  });
+  $('#sidebar').children('li').each(function () {
+    $(this).removeClass("active");
+  });
+// $("#main_container").css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
 }
