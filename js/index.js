@@ -1,8 +1,19 @@
+fadeWindowValue = 500; 
+
 $( document ).ready(function() {
   $(".button-collapse").sideNav();
   loadSideBarDynamically();
   $('#about')[0].click();
   //$('#projects')[0].click();
+});
+
+//makes all elements including picture on main page load at once
+// $(window).on('load', function() {
+//     $("#main_container").attr("visibility", "visible");
+// });
+
+$(window).on('load', function() {
+    $("#cover").fadeOut(1000);
 });
 
 
@@ -57,11 +68,11 @@ function setAsActive(id)
   {
     $('#main_container').hide().load(fileName, function() {
       $('#doorlock')[0].click();
-    }).fadeIn('200');
+    }).fadeIn(fadeWindowValue);
   }  
   else
   {
-    $('#main_container').hide().load(fileName).fadeIn('200');
+    $('#main_container').hide().load(fileName).fadeIn(fadeWindowValue);
   }
     
 }

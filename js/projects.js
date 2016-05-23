@@ -24,5 +24,5 @@ function activate(name)
 
   //strip the # fom the id
   var fileName = '/projects/' + name.substr(1, name.length-1) + '.html';
-  $('#project-display-container').load(fileName);
+  $('#project-display-container').hide().load(fileName).fadeIn(fadeWindowValue);
 }
