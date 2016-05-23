@@ -1,115 +1,26 @@
 $( document ).ready(function() {
   $(".button-collapse").sideNav();
   loadSideBarDynamically();
-  //$('#about_me_tab')[0].click();
-  $('#projects_tab')[0].click();
+  $('#about')[0].click();
+  //$('#projects')[0].click();
 });
-// $('#aboutme-anchor').scrollfire({
-//     // Offsets
-//     offset: 50,
-//     topOffset: 50,
-//     bottomOffset: 50,
-//     // Fires once when element completely comes into view from the top
-//     onTopIn: function( elm, distance_scrolled ){
-//       console.log("ab comes in from top");
-//       removeActives(); loadAboutMe();
-//     },
-//     // Fires once when element completely comes into view from the bottom
-//     onBottomVisible: function( elm ) {
-//       console.log("ab comes in from bottom");
-//       removeActives(); loadAboutMe();
-//     }
-// });
-// $('#education-anchor').scrollfire({
 
-//     // Offsets
-//     offset: 50,
-//     topOffset: 50,
-//     bottomOffset: 50,
-//     // Fires once when element completely comes into view from the top
-//     onTopIn: function( elm, distance_scrolled ){
-//       console.log("education comes in from top");
-//       removeActives(); loadEducation();
-//     },
-//     // Fires once when element completely comes into view from the bottom
-//     onBottomIn: function( elm, distance_scrolled ) {
-//       console.log("education comes in from bottom");
-//       removeActives(); loadEducation();
-//     }
-// });
-// $('#experience-anchor').scrollfire({
 
-//     // Offsets
-//     offset: 50,
-//     topOffset: 50,
-//     bottomOffset: 50,
-//     // Fires once when element completely comes into view from the top
-//     onTopIn: function( elm, distance_scrolled ){
-//       console.log("experience comes in from top");
-//       removeActives(); loadExperience()
-//     },
-//     // Fires once when element completely comes into view from the bottom
-//     onBottomVisible: function( elm ) {
-//       console.log("experience comes in from bottom");
-//       removeActives(); loadExperience();
-//     }
-// });
-// $('#contactme-anchor').scrollfire({
-
-//     // Offsets
-//     offset: 50,
-//     topOffset: 50,
-//     bottomOffset: 50,
-//     // Fires once when element completely comes into view from the top
-//     onTopIn: function( elm, distance_scrolled ){
-//       console.log("contactme comes in from top");
-//       removeActives(); loadContactMe();
-//     },
-//     // Fires once when element completely comes into view from the bottom
-//     onBottomVisible: function( elm ){
-//       console.log("contactme comes in from bottom");
-//       removeActives(); loadContactMe();
-//     }
-// });
-
-//On click listeners for tabs
-$('#about_me_tab').click(function(){
-  removeActives();
-  $('.about_me_tab').addClass("active");
-  $('#main_container').load('about.html');
-  window.scrollTo(0, 0);
-});
-$('#education_tab').click(function(){
-  removeActives();
-  $('.education_tab').addClass("active");
-  $('#main_container').load('education.html');
-  window.scrollTo(0, 0);
-});
-$('#experience_tab').click(function(){
-  removeActives();
-  $('.experience_tab').addClass("active");
-  $('#main_container').load('experience.html');
-  window.scrollTo(0, 0);
-});
-$('#contact_me_tab').click(function(){
-  removeActives();
-  $('.contact_me_tab').addClass("active");
-  $('#main_container').load('contact.html');
-  window.scrollTo(0, 0);
-});
-$('#projects_tab').click(function(){
-  removeActives();
-  $('.projects_tab').addClass("active");
-  $('#main_container').load('projects.html');
-  window.scrollTo(0, 0);
-})
+// tab onclick listeners
+$('ul#tabs li').click(function() 
+  { 
+    removeActives();
+    setAsActive('#'+this.id);
+    window.scrollTo(0, 0);
+  });
 
 /*
   Handle sidebar clicks, instead of individual ones, it simply gets the id of the tab button
   from the sidebar item class, then sends a click to the button
   */
 $('#sidebar').on('click','li',function(e){
-  $('#'+ $(this).clone().removeClass("active").attr('class')).click();
+  id = $(this).attr('id');
+  $('#'+ id.substr(0, id.length - 8)).click();
   e.preventDefault();
   $('.button-collapse').sideNav('hide');
 });
@@ -120,8 +31,10 @@ adds a class with the id in order to keep highlighting consistant
 function loadSideBarDynamically()
 {
   $('#tabs').children('li').each(function () {
-    $('#sidebar').append($(this).clone().removeClass("waves-effect").addClass($(this).attr('id')));
+    sidebarItem = $(this).clone().removeClass("waves-effect").attr('id', $(this).attr('id') + '_sidebar');
+    $('#sidebar').append(sidebarItem);
   });
+
 }
 
 function removeActives()
@@ -132,5 +45,23 @@ function removeActives()
   $('#sidebar').children('li').each(function () {
     $(this).removeClass("active");
   });
-// $("#main_container").css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
+}
+
+function setAsActive(id)
+{
+  $(id).addClass("active");
+  $(id + '_sidebar').addClass("active");
+  //strip the # fom the id
+  var fileName = id.substr(1, id.length-1) + '.html';
+  if(fileName === 'projects.html')
+  {
+    $('#main_container').hide().load(fileName, function() {
+      $('#doorlock')[0].click();
+    }).fadeIn('200');
+  }  
+  else
+  {
+    $('#main_container').hide().load(fileName).fadeIn('200');
+  }
+    
 }
