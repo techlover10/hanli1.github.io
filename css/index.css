@@ -30,13 +30,8 @@ footer.page-footer{
 	font-family: 'Raleway', sans-serif;
 }*/
 #cover {
-	position: fixed; height: 100%; width: 100%; top:0; left: 0; background: #000; z-index:9999; 
-    font-size: 30px; text-align: center; line-height: 100%; color: #fff;
-}
-span {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: normal;      
+	position: fixed; height: 100%; width: 100%; top:0; left: 0; background: #0277bd; z-index:9999; 
+    font-size: 30px; text-align: center; color: #fff;
 }
 main {
     flex: 1 0 auto;
@@ -170,4 +165,9 @@ ul li{
 }
 .linkedin span{
 	background-color: #0077B5;
+}
+
+/*custom white loader to use, simply overrides red color from library*/
+.custom-white-spinner{
+	border-color: #FFF;
 }

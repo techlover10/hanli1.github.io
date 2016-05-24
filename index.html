@@ -22,13 +22,32 @@
 
 <body>
 	<!-- Loading screen -->
-	<div id = "cover" style="display: table; overflow: hidden;">
-		<div style="display: table-cell; vertical-align: middle;">
-			<div>
-				Loading...
+	<div id="cover" class="valign-wrapper">
+		<div style="margin: 0 auto;"> <!-- center horizontally the loader -->
+			<div class="preloader-wrapper active valign">
+				<div class="spinner-layer spinner-red-only custom-white-spinner">
+					<div class="circle-clipper left">
+						<div class="circle"></div>
+					</div>
+					<div class="gap-patch">
+						<div class="circle"></div>
+					</div>
+					<div class="circle-clipper right">
+						<div class="circle"></div>
+					</div>
+				</div>
 			</div>
 		</div>
+
+		<!-- <div style="display: table; overflow: hidden;">
+			<div style="display: table-cell; vertical-align: middle;">
+				<div>
+					Loading...
+				</div>
+			</div>
+		</div> -->
 	</div>
+	
 	<header>
 		<div class="navbar-fixed">
 			<nav> <!--blue-grey darken-3-->
