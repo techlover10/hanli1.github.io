@@ -66,21 +66,33 @@ function setAsActive(id)
 	var fileName = id.substr(1, id.length-1) + '.html';
 
 	//keep main container height before executing
-	$("#main_container").css("height",$("#main_container").height);
+	//$("#main_container").css("height",$("#main_container").height);
 
-	$('#main_container').fadeOut('fast', function(){
-		//when done fading out, load new html
-		$('#main_container').load(fileName, function(){
-			//when done with loading, fade it in
-			$('#main_container').fadeIn('main_container');
-			//let the size readjust
-			$("#main_container").css("height","auto");
-			//if it is the project tab, click first to load it
-			if(fileName === 'projects.html')
-			{
-				$('#doorlock')[0].click();
-			}
-		});
+	//method 2
+	$('#main_container').css('opacity', '0');
+	$("#main_container").load(fileName, function(){
+		$("#main_container").animate({ opacity: 1 }, 200);
+		// $("#main_container").css("height","auto");
+		// //if it is the project tab, click first to load it
+		if(fileName === 'projects.html')
+		{
+			$('#doorlock')[0].click();
+		}
 	});
 
+	//method 1
+	// $('#main_container').fadeOut('fast', function(){
+	// 	//when done fading out, load new html
+	// 	$('#main_container').load(fileName, function(){
+	// 		//when done with loading, fade it in
+	// 		$('#main_container').fadeIn('main_container');
+	// 		//let the size readjust
+	// 		$("#main_container").css("height","auto");
+	// 		//if it is the project tab, click first to load it
+	// 		if(fileName === 'projects.html')
+	// 		{
+	// 			$('#doorlock')[0].click();
+	// 		}
+	// 	});
+	// });
 }
