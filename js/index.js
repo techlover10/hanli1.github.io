@@ -13,7 +13,7 @@ $( document ).ready(function() {
 // });
 
 $(window).on('load', function() {
-	$("#cover").fadeOut(1000);
+	//$("#cover").fadeOut(1000);
 });
 
 
