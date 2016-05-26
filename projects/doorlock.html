@@ -1,5 +1,19 @@
-<div class="card medium">
-	<div class="card-content">
-		<p>Under Construction</p>
-	</div>
+<div class="card">
+    <div class="card-content">
+        <h5>Overview</h5>
+		<p>This is the final project in ECE 3140: Embedded Systems. Implementation of a password protect doorlock on the ARM based Freescale FRDM Board MK64U. </p>
+        <p>The parts written include the servo controls using PWM, or Pulse Width Modulation which allows us to control the direction the servo is currently pointing in.</p>
+        <p>In addition, we used a 4x3 keypad from Adafruit, which we combined with interrupts on Port C of the board to generate the appropriate column clicked. We then poll upon interrupt to determine which row is pressed. Using this we then determine from a matrix which key is actually pressed. This is linked to the software finite state machine.</p>
+        <p>Communication with the user is done with PUTTY client which connects directly to the board with USB.</p>
+        <h5>Features</h5>
+        <ul>
+            <li>Simulation of a doorlock with servo control</li>
+            <li>Setting a unlimited length password with confirmation using a 4x3 physical keypad</li>
+            <li>Reset of existing password</li>
+            <li>Lockout of the user after multiple incorrect attempts</li>
+        </ul>
+        <h5>Languages Used</h5>
+        <p>C</p>
+        <a href="github.com/hanli1/password-doorlock.html">Look at the source code by clicking here</a>
+    </div>
 </div>

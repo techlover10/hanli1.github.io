@@ -1,10 +1,10 @@
-fadeWindowValue = 500; 
+fadeWindowValue = 500;
 
-$( document ).ready(function() {
+$(document).ready(function() {
 	$(".button-collapse").sideNav();
 	loadSideBarDynamically();
-	$('#about')[0].click();
-	//$('#projects')[0].click();
+	//$('#about')[0].click();
+	$('#projects')[0].click();
 });
 
 //makes all elements including picture on main page load at once
@@ -25,16 +25,16 @@ $('ul#tabs li').click(function()
 	window.scrollTo(0, 0);
 });
 
-/*
-	Handle sidebar clicks, instead of individual ones, it simply gets the id of the tab button
-	from the sidebar item class, then sends a click to the button
-	*/
-	$('#sidebar').on('click','li',function(e){
-		id = $(this).attr('id');
-		$('#'+ id.substr(0, id.length - 8)).click();
-		e.preventDefault();
-		$('.button-collapse').sideNav('hide');
-	});
+/* Handle sidebar clicks, instead of individual ones, it simply gets the id of the tab button
+    from the sidebar item class, then sends a click to the button */
+$('#sidebar').on('click','li',function(e){
+    id = $(this).attr('id');
+    $('#'+ id.substr(0, id.length - 8)).click();
+    e.preventDefault();
+    $('.button-collapse').sideNav('hide');
+});
+
+
 /*generates the sidebar based on the elements in the top tabs
 removes the wave effect as sidebar has it built in
 adds a class with the id in order to keep highlighting consistant
