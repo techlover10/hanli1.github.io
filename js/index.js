@@ -3,8 +3,8 @@ fadeWindowValue = 500;
 $(document).ready(function() {
 	$(".button-collapse").sideNav();
 	loadSideBarDynamically();
-	//$('#about')[0].click();
-	$('#projects')[0].click();
+	$('#about')[0].click();
+	//$('#projects')[0].click();
 });
 
 //makes all elements including picture on main page load at once
@@ -13,7 +13,7 @@ $(document).ready(function() {
 // });
 
 $(window).on('load', function() {
-	$("#cover").fadeOut(1000);
+	$("#cover").fadeOut(500);
 });
 
 
