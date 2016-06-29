@@ -1,11 +1,24 @@
 fadeWindowValue = 500;
 
+//handle changes from hash
+function handleChanges(newHash, oldHash){
+  //open better website
+  window.location.replace("http://techlover10.github.io/");
+  //stay in the same boring website
+  //setAsActive(newHash);
+}
+
 $(document).ready(function() {
 	$(".button-collapse").sideNav();
 	loadSideBarDynamically();
-	$('#about')[0].click();
+  hasher.changed.add(handleChanges);
+  hasher.initialized.add(handleChanges);
+  hasher.init();
+  hasher.setHash('!');
+	//$('#about')[0].click();
 	//$('#projects')[0].click();
 });
+
 
 //makes all elements including picture on main page load at once
 // $(window).on('load', function() {
@@ -20,9 +33,9 @@ $(window).on('load', function() {
 // tab onclick listeners
 $('ul#tabs li').click(function() 
 { 
-	removeActives();
-	setAsActive('#'+this.id);
-	window.scrollTo(0, 0);
+	//removeActives();
+	//setAsActive('#'+this.id);
+	//window.scrollTo(0, 0);
 });
 
 /* Handle sidebar clicks, instead of individual ones, it simply gets the id of the tab button
@@ -60,10 +73,14 @@ function removeActives()
 
 function setAsActive(id)
 {
+  if (id == '!'){
+    id = "about";
+  }
+	removeActives();
 	$(id).addClass("active");
 	$(id + '_sidebar').addClass("active");
 	//strip the # fom the id
-	var fileName = id.substr(1, id.length-1) + '.html';
+	var fileName = id + '.html';
 
 	//keep main container height before executing
 	//$("#main_container").css("height",$("#main_container").height);
@@ -80,6 +97,7 @@ function setAsActive(id)
 		}
 	});
 
+	window.scrollTo(0, 0);
 	//method 1
 	// $('#main_container').fadeOut('fast', function(){
 	// 	//when done fading out, load new html
